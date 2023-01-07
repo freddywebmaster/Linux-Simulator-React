@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:sass": "sass --watch ./src/styles/sass/index.scss ./src/styles/globals.css",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -15,9 +16,20 @@
     "@types/react-dom": "18.0.10",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
+    "interactjs": "^1.10.17",
     "next": "13.1.1",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-interactjs": "^0.1.2",
+    "react-redux": "^8.0.5",
+    "recoil": "^0.7.6",
+    "redux": "^4.2.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   }
 }
