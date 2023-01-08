@@ -26,7 +26,7 @@ export const webApps: webApps[] = [
     image: explorerImg,
     category: "internet",
     repo: "",
-    url: "",
+    url: "https://www.bing.com",
     info: "Navegador de internet",
     config: {
       initialW: "w-full",
@@ -42,7 +42,7 @@ export const webApps: webApps[] = [
     image: reactChatImg,
     category: "internet",
     repo: "",
-    url: "",
+    url: "https://react-chat-freddy.netlify.app",
     info: "App de chat",
     config: {
       initialW: "w-full",

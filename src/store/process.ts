@@ -3,19 +3,20 @@ import { atom } from "recoil";
 export type Window = {
   appId: number;
   status: "show" | "min";
+  id: string;
 };
 
 export interface ProcessState {
-  deskAppSelected: number | null;
-  currentWindow: number | null;
+  iconDeskSelected: number | null;
+  currentWindow: string;
   windows: Window[];
 }
 
 export const processStore = atom({
   key: "process",
   default: {
-    deskAppSelected: null,
-    currentWindow: null,
+    iconDeskSelected: null,
+    currentWindow: "null",
     windows: [],
   } as ProcessState,
 });
