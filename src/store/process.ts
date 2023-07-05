@@ -10,6 +10,7 @@ export interface ProcessState {
   iconDeskSelected: number | null;
   currentWindow: string;
   windows: Window[];
+  pcIsEnabled: boolean;
 }
 
 export const processStore = atom({
@@ -18,5 +19,6 @@ export const processStore = atom({
     iconDeskSelected: null,
     currentWindow: "null",
     windows: [],
+    pcIsEnabled: false,
   } as ProcessState,
 });

@@ -86,6 +86,17 @@ function WebApp({
     left: "left-0",
   };
 
+  const closeApp = () => {
+    const newList = running.windows.filter((w) => w.id != win.id);
+    setRunnig({
+      ...running,
+      windows: newList,
+    });
+
+    console.log(running.windows);
+    console.log(win.id, newList);
+  };
+
   const zIndex =
     running.currentWindow && running.currentWindow === win.id ? "z-20" : "z-10";
 
@@ -93,14 +104,17 @@ function WebApp({
     <div onClick={() => setRunnig({ ...running, currentWindow: win.id })}>
       <div
         ref={boxRef}
-        className={`${windowSize.left} ${windowSize.top} absolute bg-gray-800 w-[850px] h-12 ${zIndex} cursor-grab`}
+        className={`${windowSize.left} ${windowSize.top} absolute bg-gray-800 ${app?.config.initialW} h-12 ${zIndex} cursor-grab`}
       >
         <div className="flex items-center px-5 h-full w-full">
           <div className="flex gap-3">
-            <button className="h-7 w-7 rounded-full bg-red-600 text-white font-bold ">
+            <button
+              onClick={closeApp}
+              className="h-7 w-7 rounded-full bg-red-600 text-white font-bold "
+            >
               x
             </button>
-            <button className="h-7 w-7 rounded-full bg-blue-600 text-white font-bold ">
+            <button className="h-7 w-7 rounded-full bg-blue-600 text-white font-bold hidden lg:flex items-center justify-center">
               []
             </button>
             <button className="h-7 w-7 rounded-full bg-gray-600 text-white font-bold ">
@@ -115,7 +129,7 @@ function WebApp({
       </div>
 
       <div
-        className={`${windowSize.left} ${windowSize.top} absolute bg-white w-[850px] h-[500px] mt-12 ${zIndex}`}
+        className={`${windowSize.left} ${windowSize.top} absolute bg-white ${app?.config.initialW} ${app?.config.initialH} mt-12 ${zIndex}`}
         ref={boxBodyRef}
       >
         <iframe src={app?.url} className="w-full h-full" />

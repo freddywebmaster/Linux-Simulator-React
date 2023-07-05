@@ -10,3 +10,7 @@
 img {
   pointer-events: none;
 }
+
+.bg-primary {
+  background-color: #23104b;
+}

@@ -1,9 +1,10 @@
+import Table from "components/Table";
 import WebApp from "components/WebApp";
 import { webApps } from "constants/webApps";
 import { nanoid } from "nanoid";
 import Image from "next/image";
 import { useRef } from "react";
-import { MdOutlineApps } from "react-icons/md";
+import { GrArchlinux } from "react-icons/gr";
 import { useRecoilState } from "recoil";
 import { processStore } from "store/process";
 
@@ -17,7 +18,6 @@ export default function Home() {
     <div
       ref={containerRef}
       className="h-screen w-full relative"
-      onClick={() => console.log("click desktop")}
     >
       {running.windows.length !== 0 &&
         running.windows.map((win, i) => {
@@ -27,12 +27,12 @@ export default function Home() {
       <div
         style={{
           backgroundImage:
-            "url(https://images.hdqwalls.com/wallpapers/arch-linux-hd.jpg)",
+            "url(https://images2.alphacoders.com/122/1224122.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="p-4 text-white overflow-hidden h-[90%] flex flex-wrap gap-3 prevent-select absolute top-0 left-0 w-full"
+        className="p-4 text-white overflow-hidden h-[93%] flex flex-wrap gap-3 prevent-select absolute top-0 left-0 w-full"
       >
         {webApps.map((app) => {
           //ICONO DE APP
@@ -62,15 +62,21 @@ export default function Home() {
               }}
               key={app.name}
             >
-              <Image src={app.image} width={70} height={70} alt={app.name} />
+              <Image
+                src={app.image}
+                width={90}
+                height={90}
+                alt={app.name}
+                className="bg-white/60 rounded-full p-3"
+              />
               <p>{app.name}</p>
             </div>
           );
         })}
       </div>
-      <div className="flex bg-gray-800 py-2 px-4 z-50 absolute bottom-0 left-0 w-full h-[10%]">
-        <button className="p-2 rounded hover:bg-gray-900">
-          <MdOutlineApps className="text-white text-4xl" />
+      <div className="flex bg-primary z-50 absolute bottom-0 left-0 w-full h-[7%]">
+        <button className="rounded hover:bg-gray-900 px-6 flex items-center justify-center">
+          <GrArchlinux className="text-white text-2xl" />
         </button>
       </div>
     </div>
